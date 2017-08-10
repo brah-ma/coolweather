@@ -1,6 +1,9 @@
 package com.example.brahma.coolweather.db;
 
+import org.litepal.annotation.Column;
 import org.litepal.crud.DataSupport;
+
+import java.util.List;
 
 /**
  * Created by 10750 on 2017/8/1.
@@ -10,9 +13,11 @@ public class Province extends DataSupport {
 
     private int id;
 
+    private int provinceId;
+
     private String name;
 
-    private int code;
+    private List<City> cityList;
 
     public int getId() {
         return id;
@@ -26,15 +31,23 @@ public class Province extends DataSupport {
         return name;
     }
 
+    public List<City> getCityList() {
+        return cityList;
+    }
+
+    public void setCityList(List<City> cityList) {
+        this.cityList = cityList;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    public int getCode() {
-        return code;
+    public int getProvinceId() {
+        return provinceId;
     }
 
-    public void setCode(int code) {
-        this.code = code;
+    public void setProvinceId(int provinceId) {
+        this.provinceId = provinceId;
     }
 }
